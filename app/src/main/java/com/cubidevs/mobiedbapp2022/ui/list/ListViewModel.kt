@@ -4,22 +4,22 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.cubidevs.mobiedbapp2022.server.model.Movie
-import com.cubidevs.mobiedbapp2022.server.model.MoviesList
-import com.cubidevs.mobiedbapp2022.server.moviesrepository.MoviesRepository
+import com.cubidevs.mobiedbapp2022.server.freegamesrepository.FreeGamesRepository
+import com.cubidevs.mobiedbapp2022.server.model.FreeGame
+import com.cubidevs.mobiedbapp2022.server.model.FreeGamesList
 import kotlinx.coroutines.launch
 
 class ListViewModel : ViewModel() {
 
-    private val moviesRepository = MoviesRepository()
+    private val gamesRepository = FreeGamesRepository()
 
-    private val _moviesLoaded : MutableLiveData<ArrayList<Movie>> = MutableLiveData()
-    val moviesLoaded: LiveData<ArrayList<Movie>> = _moviesLoaded
+    private val _gamesLoaded : MutableLiveData<ArrayList<FreeGame>> = MutableLiveData()
+    val gamesLoaded: LiveData<ArrayList<FreeGame>> = _gamesLoaded
 
     fun getMovies() {
         viewModelScope.launch {
-            val moviesList : MoviesList = moviesRepository.getMovies()
-            _moviesLoaded.postValue(moviesList.movies as ArrayList<Movie>)
+            val gamesList : FreeGamesList = gamesRepository.getGames()
+            _gamesLoaded.postValue(gamesList.games as ArrayList<FreeGame>)
         }
     }
 }

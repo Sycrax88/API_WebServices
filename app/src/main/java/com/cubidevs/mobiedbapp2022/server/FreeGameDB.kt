@@ -5,9 +5,9 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object MovieDB {
+object FreeGameDB {
 
-    private const val  urlAPI="https://api.themoviedb.org/3/"
+    private const val  urlAPI="https://www.freetogame.com/api/"
 
     private val okHttpClient = OkHttpClient.Builder()
         .addInterceptor((HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)))

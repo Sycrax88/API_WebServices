@@ -30,7 +30,7 @@
         android:label="@string/title_detail"
         tools:layout="@layout/fragment_detail">
     <argument
-        android:name="movie"
-        app:argType="com.cubidevs.mobiedbapp2022.server.model.Movie" />
+        android:name="game"
+        app:argType="com.cubidevs.mobiedbapp2022.server.model.FreeGame" />
     </fragment>
 </navigation>

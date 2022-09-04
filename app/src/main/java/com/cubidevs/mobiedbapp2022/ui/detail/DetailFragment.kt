@@ -25,13 +25,16 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val movie = args.movie
+        val game = args.game
         with(detailBinding){
-            movieTitleTextView.text = movie.title
-            releaseDateTextView.text = movie.releaseDate
-            voteAverageTextView.text = movie.voteAverage.toString()
-            summaryTextView.text = movie.overview
-            Picasso.get().load("https://image.tmdb.org/t/p/w500"+movie.posterPath).into(posterImageView)
+            gameTitleTextView.text = game.title
+            releaseDateTextView.text = game.releaseDate
+            publisherTextView.text = game.publisher
+            developerTextView.text = game.developer
+            platformTextView.text = game.platform
+            genreTextView.text = game.genre
+            shortDescriptionTextView.text = game.shortDescription
+            Picasso.get().load("https://www.freetogame.com/g/"+game.id.toString()+"/thumbnail.jpg").into(posterImageView)
         }
     }
 }

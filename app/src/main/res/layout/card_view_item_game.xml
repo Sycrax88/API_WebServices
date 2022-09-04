@@ -25,12 +25,12 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/movie_title_text_view"
+            android:id="@+id/game_title_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="@string/movie_title"
+            android:text="@string/game_title"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -38,47 +38,47 @@
             app:layout_constraintTop_toBottomOf="@+id/poster_image_view" />
 
         <TextView
-            android:id="@+id/release_date_label_text_view"
+            android:id="@+id/genre_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/release_date_label"
+            android:text="@string/genre_label"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/movie_title_text_view" />
+            app:layout_constraintTop_toBottomOf="@+id/game_title_text_view" />
 
         <TextView
-            android:id="@+id/release_date_text_view"
+            android:id="@+id/genre_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="@string/release_date_example"
-            app:layout_constraintStart_toEndOf="@+id/release_date_label_text_view"
-            app:layout_constraintTop_toBottomOf="@+id/movie_title_text_view" />
+            android:text="@string/genre_example"
+            app:layout_constraintStart_toEndOf="@+id/genre_label_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/game_title_text_view" />
 
         <TextView
-            android:id="@+id/vote_average_text_view"
+            android:id="@+id/platform_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/vote_average_example"
+            android:text="@string/platform_example"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/movie_title_text_view" />
+            app:layout_constraintTop_toBottomOf="@+id/game_title_text_view" />
 
         <TextView
-            android:id="@+id/vote_average_label_text_view"
+            android:id="@+id/platform_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/vote_average_label"
+            android:text="@string/platform_label"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/vote_average_text_view"
-            app:layout_constraintTop_toBottomOf="@+id/movie_title_text_view" />
+            app:layout_constraintEnd_toStartOf="@+id/platform_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/game_title_text_view" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

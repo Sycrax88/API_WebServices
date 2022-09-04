@@ -9,14 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cubidevs.mobiedbapp2022.databinding.FragmentListBinding
-import com.cubidevs.mobiedbapp2022.server.model.Movie
+import com.cubidevs.mobiedbapp2022.server.model.FreeGame
 
 class ListFragment : Fragment() {
 
     private lateinit var listBinding: FragmentListBinding
     private lateinit var listViewModel: ListViewModel
-    private var moviesList: ArrayList<Movie> = ArrayList()
-    private lateinit var moviesAdapter: MoviesAdapter
+    private var gamesList: ArrayList<FreeGame> = ArrayList()
+    private lateinit var gamesAdapter: GamesAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         listViewModel = ViewModelProvider(this)[ListViewModel::class.java]
@@ -29,24 +29,24 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        moviesAdapter = MoviesAdapter(moviesList, onItemClicked = { })
+        gamesAdapter = GamesAdapter(gamesList, onItemClicked = { })
 
-        listBinding.moviesRecyclerView.apply {
+        listBinding.gamesRecyclerView.apply {
             layoutManager = LinearLayoutManager(this@ListFragment.requireContext())
-            adapter = moviesAdapter
+            adapter = gamesAdapter
             setHasFixedSize(false)
         }
 
-        listViewModel.moviesLoaded.observe(viewLifecycleOwner){ result ->
+        listViewModel.gamesLoaded.observe(viewLifecycleOwner){ result ->
             onMoviesLoadedSubscribe(result)
         }
 
         listViewModel.getMovies()
     }
 
-    private fun onMoviesLoadedSubscribe(moviesList: ArrayList<Movie>?) {
-        moviesList?.let { moviesList ->
-            moviesAdapter.appendItems(moviesList)
+    private fun onMoviesLoadedSubscribe(gamesList: ArrayList<FreeGame>?) {
+        gamesList?.let { gamesList ->
+            gamesAdapter.appendItems(gamesList)
         }
     }
 }

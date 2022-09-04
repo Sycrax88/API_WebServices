@@ -1,12 +1,12 @@
 package com.cubidevs.mobiedbapp2022.server
 
-import com.cubidevs.mobiedbapp2022.server.model.MoviesList
+import com.cubidevs.mobiedbapp2022.server.model.FreeGamesList
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ApiService {
 
-    @GET("movie/popular")
-    fun getMovies(@Query("api_key") apiKey: String): MoviesList
+    @GET("https://www.freetogame.com/api/games\n")
+    fun getGames(@Query("api_key") apiKey: String): FreeGamesList
 
 }
